@@ -1,0 +1,141 @@
+body {
+  //margin-top: -20px;
+}
+@mixin opaque {
+  /* Fallback for web browsers that don't support RGBa */
+  background-color: rgb(0, 0, 0);
+  /* RGBa with 0.6 opacity */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.opaque(startColorstr=#99000000, endColorstr=#99000000);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.opaque(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+@mixin lp-item {
+  width: 100%;
+  position: absolute;
+}
+.header {
+  @include opaque;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 10px 20px;
+  .logo {
+    float: left;
+    img {
+      width: 40px;
+    }
+  }
+  nav {
+    float: right;
+    ul{
+      list-style: none;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      li{
+        float:left;
+        margin: 0px 10px;
+        color: white;
+      }
+    }
+  }
+}
+.lp-section {
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#buy {
+  background-image: image-url('landing1.jpg');
+}
+
+#rent {
+  background-image: image-url('landing2.jpg');
+}
+
+#showcase {
+  background-image: image-url('landing3.jpg');
+}
+
+#partners {
+  text-align: center;
+  h2 {
+    color: black;
+  }
+}
+
+h1, h2, h3 {
+  color: white;
+  margin: 0;
+}
+
+.section-title, .showcase-title {
+  @include opaque;
+  @include lp-item;
+  padding: 60px 0;
+}
+
+.section-title {
+  top: 35%;
+}
+
+.showcase-title {
+  bottom: 0;
+}
+
+.buy-subtitle {
+  @include lp-item;
+  bottom: 20%;
+}
+
+.buy-cta, .rent-cta {
+  @include lp-item;
+  bottom: 10%;
+}
+
+.rent-cta {
+  top: 70%;
+}
+
+.showcase-cta {
+  margin-top: 30px;
+}
+
+.button {
+  width: 200px;
+  padding: 15px;
+  margin: 0 auto;
+  @include opaque;
+  text-align: center;
+  background-color: orange;
+  a {
+    color: white;
+  }
+}
+
+footer {
+  .footer-menu {
+    float: left;
+    background-color: black;
+    width: 100%;
+    ul {
+      margin: 0;
+      padding: 30px 20px;
+      list-style: none;
+      float: left;
+      li {
+        margin: 0;
+        color: white;
+        padding: 10px;
+        float: left;
+      }
+    }
+  }
+}
