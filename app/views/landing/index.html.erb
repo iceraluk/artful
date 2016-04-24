@@ -62,7 +62,7 @@
     </div>
   </div>
 </section>
-<section id="catalogue" class="flashes">
+<section id="catalogue" class="<%= 'flashes' if flash.any? %>">
   <div class="text-center">
     <h4>Fill out the form below to receive the Artful Contemporary catalogue</h4>
     <%= form_for @subscriber do |f| %>
