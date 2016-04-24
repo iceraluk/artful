@@ -32,6 +32,7 @@ body {
     }
   }
   nav {
+    display: none;
     ul{
       margin: 0;
       padding: 0;
@@ -282,5 +283,10 @@ footer {
         }
       }
     }
+  }
+}
+@media screen and (min-width: 640px) {
+  .header nav {
+    display: block
   }
 }
