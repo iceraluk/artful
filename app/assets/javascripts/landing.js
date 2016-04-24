@@ -1,10 +1,14 @@
 $(document).ready(function(){
-    var element = $('.flashes')
-    var offsets = element.offset();
-    var top = offsets.top;
-    var left = offsets.left;
+    var element = $('.flashes');
+    if (element.length) {
 
-    window.scrollTo(left, top);
+        var offsets = element.offset();
+        var top = offsets.top;
+        var left = offsets.left;
+
+        window.scrollTo(left, top);
+    }
+
 
 
     $('#buy-button').on('click', function(e){
@@ -31,6 +35,13 @@ $(document).ready(function(){
     });
 
     $('#gallery-button').on('click', function(e){
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('#catalogue').offset().top
+        }, 1000);
+    });
+
+    $('.catalogue-button').on('click', function(e){
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $('#catalogue').offset().top
