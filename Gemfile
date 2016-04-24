@@ -10,7 +10,7 @@ ruby "2.2.4"
 gem "pg", "0.18.4"
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Normalize.css
 gem 'normalize-rails'
