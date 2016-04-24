@@ -1,64 +1,118 @@
+
 <header class="header" xmlns="http://www.w3.org/1999/html">
   <div class="logo"><%= image_tag "logo.png" %></div>
   <nav>
     <ul class="menu">
-      <li>Gallery</li>
-      <li>Artists</li>
-      <li>Events</li>
-      <li>Blog</li>
+      <li><a href="#buy" id="buy-button">Buy</a></li>
+      <li><a href="#rent" id="rent-button">Rent</a></li>
+      <li><a href="#showcase" id="showcase-button">Showcase</a></li>
+      <li><a href="#gallery" id="gallery-button">Gallery</a></li>
     </ul>
   </nav>
 </header>
 <section id="buy" class="lp-section">
+  <div class="section-buy">
     <div class="text-center section-title">
-      <h2>A cutting edge platform for artists who inovate and inspire</h2>
+      <h2>A cutting edge platform <br> for artists who innovate and inspire</h2>
     </div>
     <div class="text-center buy-subtitle">
-      <h3>This is not your traditional gallery</h3>
+      <h3>This is <br> not your traditional art gallery</h3>
     </div>
     <div class="text-center buy-cta">
       <div class="button">
-        <a href="#">Visit artists</a>
+        <a href="#">See artists</a>
       </div>
     </div>
+  </div>
 </section>
 <section id="rent" class="lp-section">
-  <div class="text-center section-title">
-    <h3>Find contemporary art at its finest</h3>
-    <h2>Better inspiration and personality for every space you share</h2>
-  </div>
-  <div class="text-center rent-cta">
-    <div class="button">
-      <a href="#">Get inspired</a>
+  <div class="section-rent">
+    <div class="text-center section-title">
+      <h3>Add a touch of personality to your space</h3>
+      <h2>Find contemporary art at its finest</h2>
+    </div>
+    <div class="text-center rent-cta">
+      <div class="button">
+        <a href="#">Get inspired</a>
+      </div>
     </div>
   </div>
 </section>
 <section id="showcase" class="lp-section">
   <div class="text-center section-title showcase-title">
-    <h3>Shift your environment to a new style</h3>
-    <h2>Try a new design for free and inspire people in your space</h2>
+    <h3>Tailor the ambience of your environment</h3>
+    <h3>Try a new design for free and inspire people in your space</h3>
+    <div class="showcase-items">
+      <ul>
+        <li>
+          Free of charge
+        </li>
+        <li>
+          2 weeks temporary exhibition
+        </li>
+        <li>
+          Presentation on request
+        </li>
+      </ul>
+    </div>
     <div class="showcase-cta">
       <div class="button">
-        <a href="#">Visit artists</a>
+        <a href="#">See catalogue</a>
       </div>
     </div>
   </div>
 </section>
-<section id="partners">
-  <h2>A platform tailored with personality for great brands</h2>
+<section id="catalogue" class="flashes">
+  <div class="text-center">
+    <h4>Fill out the form below to receive the Artful Contemporary catalogue</h4>
+    <%= form_for @subscriber do |f| %>
+        <% flash.each do |name, msg| %>
+            <% if name == :error  %>
+                <% if msg.class == Array %>
+                    <% msg.each do |message| %>
+                        <%= content_tag :p, message, :id => "flash_#{name}", class: 'error' %>
+                    <% end %>
+                <% end %>
+
+            <% end %>
+        <% end %>
+      <p style="color: green"><%= flash[:notice] %></p>
+
+      <%= f.text_field :first_name, placeholder: 'First Name*', class: 'text-field' %><br>
+
+      <%= f.text_field :last_name, placeholder: 'Last Name*', class: 'text-field' %><br>
+
+      <%= f.text_field :phone_number, placeholder: 'Phone Number', class: 'text-field' %><br>
+
+      <%= f.text_field :email, placeholder: 'Email*', class: 'text-field' %><br>
+
+      <%= f.submit 'Send', class: 'form-button' %>
+    <% end %>
+  </div>
 </section>
 <footer>
   <div class="footer-menu">
-    <ul>
-      <li>
-        The team
-      </li>
-      <li>
-        Contact us
-      </li>
-      <li>
-        Artist? Give us a shout
-      </li>
-    </ul>
+    <!--<ul>-->
+      <!--<li>-->
+        <!--<a>The team</a>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<a>Contact us</a>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<a>Artist? Give us a shout</a>-->
+      <!--</li>-->
+    <!--</ul>-->
+
+    <div class="social-media">
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/artfulcontemporary/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/artful_contemporary/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="http://www.twitter.com/artful_ro" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>
+

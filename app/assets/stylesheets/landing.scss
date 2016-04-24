@@ -23,25 +23,33 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  //height: 60px;
   padding: 10px 20px;
   .logo {
     float: left;
     img {
-      width: 40px;
+      width: 30px;
     }
   }
   nav {
-    float: right;
     ul{
-      list-style: none;
-      float: right;
-      height: 40px;
-      line-height: 40px;
+      margin: 0;
+      padding: 0;
+      text-align: center;
       li{
-        float:left;
-        margin: 0px 10px;
-        color: white;
+        display: inline;
+        a {
+          font-size: 1.6em;
+          font-family: 'neusademibold', Arial, Helvetica, sans-serif;;
+          display: inline-block;
+          padding: 0 30px;
+          color: white;
+          text-decoration: none;
+          &:hover, &:active {
+            color: black;
+            text-decoration: none;
+          }
+        }
       }
     }
   }
@@ -50,6 +58,7 @@ body {
   height: 100vh;
   background-size: cover;
   position: relative;
+  min-height: 1000px;
 }
 
 #buy {
@@ -74,50 +83,166 @@ body {
 h1, h2, h3 {
   color: white;
   margin: 0;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
+h2, a {
+  font-family: 'neusaextrabold', Arial, Helvetica, sans-serif;;
+  font-size: 2.8em;
+  letter-spacing: 4px;
+}
+
+h3, h4 {
+  font-family: 'neusademibold', Arial, Helvetica, sans-serif;;
+  font-size: 2.8em;
+  letter-spacing: 4px;
+}
+
+h4 {
+  font-size: 1.8em;
+}
+
+h2, h3, h4, a {
+  text-transform: uppercase;
+}
+
+a {
+  font-size: 1.8em;
+  color: white;
+  letter-spacing: 3px;
+  text-decoration: none;
+  &:hover, &:active {
+    text-decoration: none;
+  }
+}
 .section-title, .showcase-title {
   @include opaque;
-  @include lp-item;
   padding: 60px 0;
 }
 
-.section-title {
-  top: 35%;
-}
-
-.showcase-title {
+.section-buy, .section-rent, .showcase-title {
   bottom: 0;
+  @include lp-item;
 }
 
 .buy-subtitle {
-  @include lp-item;
-  bottom: 20%;
+  margin: 60px 0;
 }
 
 .buy-cta, .rent-cta {
-  @include lp-item;
-  bottom: 10%;
+  margin-bottom: 60px;
 }
 
 .rent-cta {
-  top: 70%;
+  margin-top: 60px;
 }
 
 .showcase-cta {
   margin-top: 30px;
 }
 
-.button {
-  width: 200px;
-  padding: 15px;
-  margin: 0 auto;
-  @include opaque;
+.showcase-items {
+  margin: 80px 0;
+  padding: 0;
   text-align: center;
-  background-color: orange;
+  ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    li {
+      font-size: 1.6em;
+      font-family: 'neusademibold', Arial, Helvetica, sans-serif;;
+      display: inline-block;
+      padding: 0 30px;
+      margin: 30px 60px;
+      color: black;
+      background-color: gray;
+      text-transform: uppercase;
+      width: 300px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+#catalogue {
+  padding: 60px 40px;
+  .text-field {
+    height: 60px;
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    border: solid 4px black;
+  }
+  .form-button {
+    max-width: 400px;
+    width: 90%;
+    color: black;
+    padding: 20px;
+    display: block;
+    border: solid 4px black;
+    margin: 30px auto 0;
+    font-size: 1.6em;
+    font-family: 'neusademibold', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    background-color: white;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+.text-field::-webkit-input-placeholder {
+  font-family: 'neusademibold', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.text-field:-ms-input-placeholder {
+  font-family: 'neusademibold', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.text-field:-moz-placeholder {
+  font-family: 'neusademibold', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.text-field::-moz-placeholder {
+  font-family: 'neusademibold', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 1px;
+}
+
+
+.button {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
   a {
     color: white;
+    padding: 20px;
+    display: block;
+    border: solid 4px white;
+    &:hover, &:active {
+      background-color: black;
+    }
   }
+}
+
+.error {
+  color: darkred;
+}
+.notice {
+  color: darkgreen;
 }
 
 footer {
@@ -135,6 +260,26 @@ footer {
         color: white;
         padding: 10px;
         float: left;
+      }
+    }
+  }
+  .social-media {
+    width: 277px;
+    display: block;
+    margin: 0 auto;
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      li {
+        display: inline;
+        a {
+          display: inline-block;
+          padding: 0 30px;
+          &:hover {
+            color: gray;
+          }
+        }
       }
     }
   }

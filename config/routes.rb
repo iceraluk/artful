@@ -4,6 +4,8 @@ Artful::Application.routes.draw do
 
   root "landing#index"
 
+  resources :subscribers, only: [:create]
+
 
 
   # You can have the root of your site routed with "root"
