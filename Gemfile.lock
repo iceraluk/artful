@@ -94,6 +94,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.11.2)
     nenv (0.3.0)
+    newrelic_rpm (3.15.1.316)
     normalize-rails (4.0.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
@@ -173,6 +174,7 @@ DEPENDENCIES
   jquery-rails
   jquery-scrollto-rails
   mailchimp-api
+  newrelic_rpm
   normalize-rails
   pg (= 0.18.4)
   pry
